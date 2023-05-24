@@ -10,10 +10,12 @@ def findMedianSortedArrays(nums1, nums2):
     med_i1 = med_i + 1
     return (fin_arr[med_i] + fin_arr[med_i1]) / 2
 
-case1 = [1,3], [2]
-case2 = [1,2], [3,4]
+cases = (
+    ([1,3], [2]),
+    ([1,2], [3,4]),
+)
 
-res1 = findMedianSortedArrays(*case1)
-res2 = findMedianSortedArrays(*case2)
+a = findMedianSortedArrays
 
-print(res1, res2)
+for i in cases:
+    print(a(*i))

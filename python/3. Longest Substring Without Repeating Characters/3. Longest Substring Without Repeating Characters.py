@@ -1,5 +1,3 @@
-
-
 def lengthOfLongestSubstring(s: str) -> int:
     p_s = ""
     c_s = ""

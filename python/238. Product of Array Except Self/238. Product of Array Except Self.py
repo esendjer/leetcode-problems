@@ -1,8 +1,6 @@
-# Here is an explanation about how these alghorithms work
-# https://www.enjoyalgorithms.com/blog/product-of-array-except-self
 def productExceptSelfNoExtraSpace(nums):
     # O(1) space complexity without extra space
-    # O(n) + O(n) = O(n) time complexity
+    # O(n) time complexity
     a = len(nums)
     res = [1] * a
     cur = 1

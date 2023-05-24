@@ -1,8 +1,3 @@
-# binary search
-# https://www.geeksforgeeks.org/python-program-for-binary-search/
-# https://www.programiz.com/dsa/binary-search
-# https://realpython.com/binary-search-python/
-#       https://realpython.com/binary-search-python/#binary-search
 class Solution:
     def findMin(self, nums) -> int:
         # searching in two directions
@@ -23,17 +18,7 @@ class Solution:
 
     def findMinPyNative(self, nums) -> int:
         # using Python native methods and functions
-        n_len = len(nums)
-        left = 0
-        right = n_len - 1
-        for _ in range(n_len // 2):
-            if nums[left] > nums[left + 1]:
-                return nums[left + 1]
-            if nums[right] < nums[right - 1]:
-                return nums[right]
-            left += 1
-            right -=1
-        return nums[0]
+        return min(nums)
 
 cases = (
     [3,4,5,1,2],

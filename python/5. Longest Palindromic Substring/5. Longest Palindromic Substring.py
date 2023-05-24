@@ -13,11 +13,7 @@ def longestPalindrome(s):
     return polind_sub_str
 
 
-
-
 cases = "xaabacxcabaaxcabaax", "babad", "cbbd", "abcdefg", 
 
 for i in cases:
     print(longestPalindrome(i))
-
-# length /leŋθ/

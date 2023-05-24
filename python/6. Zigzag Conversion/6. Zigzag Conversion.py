@@ -18,7 +18,7 @@ def convert(s: str, numRows: int) -> str:
     return a
 
 cases = ("PAYPALISHIRING", 3), ("PAYPALISHIRING", 4), ("A", 1),
-cdddd = ("PAHNAPLSIIGYIR", 3), ("PINALSIGYAHRPI", 4), ("A", 1),
+# cdddd = ("PAHNAPLSIIGYIR", 3), ("PINALSIGYAHRPI", 4), ("A", 1),
 
 for i in cases:
     print(convert(*i))
