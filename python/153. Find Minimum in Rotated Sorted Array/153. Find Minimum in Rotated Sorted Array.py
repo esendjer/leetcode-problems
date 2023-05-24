@@ -25,5 +25,11 @@ cases = (
     [4,5,6,7,0,1,2],
     [11,13,15,17],
     [1],
-    [1,2]
+    [1,2],
 )
+
+a = Solution()
+b = a.findMin
+
+for i in cases:
+    print(b(i))
