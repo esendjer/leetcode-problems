@@ -3,11 +3,11 @@
 [153. Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 Here are a couple of ways to solve the problem:
-* Binary search - function `findMin`
+* Binary search - function `findMinBS`
+* Couples in _for_ loop - function `findMin`
 * Python `min` - function `findMinPyNative`
 
-Rhe first way with the Binary search implies O(log n) complexity,
-but the thing is that the embedded `min` function is realized on a lowest C level and works faster regardless of its O(n) complexity.
+The first way with the Binary search implies O(log n) complexity, but the thing is that the embedded `min` function is realized on a lowest C level and works faster regardless of its O(n) complexity.
 
 Time Complexity of some operations in current CPython - https://wiki.python.org/moin/TimeComplexity
 

@@ -1,9 +1,31 @@
 class Solution:
+    def findMinBS(self, nums):
+        """
+        [3,4,5,1,2],
+        [4,5,6,7,0,1,2],
+        [11,13,15,17],
+        [5,1,2,3,4],
+        """
+        ans = float("inf")
+        l = 0
+        r = len(nums) - 1
+        while l <= r:
+            m = (l + r) // 2
+            if nums[m] < ans:
+                ans = nums[m]
+            if  nums[l] > nums[m]:
+                if nums[m] < nums[r] and nums[r] < nums[l]:
+                    r = m - 1
+                else:
+                    l = m + 1
+            else:
+                if nums[m] > nums[r] and nums[r] < nums[l]:
+                    l = m + 1
+                else:
+                    r = m - 1
+        return ans
+
     def findMin(self, nums) -> int:
-        # searching in two directions
-        # from the beginning to middle
-        # and
-        # from the end to to middle as well
         n_len = len(nums)
         left = 0
         right = n_len - 1
@@ -26,10 +48,11 @@ cases = (
     [11,13,15,17],
     [1],
     [1,2],
+    [5,1,2,3,4],
 )
 
 a = Solution()
-b = a.findMin
+b = a.findMinBS
 
 for i in cases:
     print(b(i))
