@@ -2,6 +2,11 @@
 
 [73. Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
 
-This solution has O(1) extra space and O(m ** n) time complexity
+* `setZeroes` - the first
+* `setZeroes` - the second
 
-But, I suppose, it could be improved with removed the last _while_ loop
+Both are use integers (in a binary representation) to sore 0-filled rows, while the second does this for columns as well.
+
+These solutions have $O(1)$ extra space and $O( M \times N)$ time complexity.
+
+But, I suppose, it could be improved with removed...
