@@ -2,6 +2,7 @@
 .vscode/
 .idea/
 local-*
+**/__pycache__/
 __pycache__/
 *.pyc
 .DS_Store
