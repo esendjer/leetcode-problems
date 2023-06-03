@@ -1,6 +1,18 @@
 from typing import List
 import heapq
-class Solution:
+class Solution:    
+    def singleNumberB(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        nums.sort()
+        while len(nums) > 0:
+            f0 = nums.pop(0)
+            if len(nums) == 0:
+                return f0
+            f1 = nums.pop(0)
+            if f0 ^ f1:
+                return f0
+
     def singleNumberH(self, nums: List[int]) -> int:
         if len(nums) == 1:
             return nums[0]
@@ -31,7 +43,7 @@ cases = (
 )
 
 a = Solution()
-b = a.singleNumberH
+b = a.singleNumberB
 
 for i in cases:
     print(b(i))
