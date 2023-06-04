@@ -31,6 +31,7 @@ for i in cases:
     if i:
         fl = ListNode()
         ll = fl
+        # i know that this bypasses empty cases
         for j in range(len(i)):
             ll.val = i[j]
             if j != len(i) - 1:
