@@ -28,17 +28,15 @@ b = a.removeElements
 
 for i in cases:
     dl = []
-    if i[0]:
-        fl = ListNode()
-        ll = fl
-        # i know that this bypasses empty cases
-        for j in range(len(i[0])):
-            ll.val = i[0][j]
-            if j != len(i[0]) - 1:
-                ll.next = ListNode()
-                ll = ll.next
-        nl = b(fl, i[1])
-        while not nl is None:
-            dl.append(nl.val)
-            nl = nl.next
+    fl = ListNode() if i[0] else None
+    ll = fl
+    for j in range(len(i[0])):
+        ll.val = i[0][j]
+        if j != len(i[0]) - 1:
+            ll.next = ListNode()
+            ll = ll.next
+    nl = b(fl, i[1])
+    while not nl is None:
+        dl.append(nl.val)
+        nl = nl.next
     print(dl)

@@ -28,17 +28,15 @@ b = a.reverseList
 
 for i in cases:
     dl = []
-    if i:
-        fl = ListNode()
-        ll = fl
-        # i know that this bypasses empty cases
-        for j in range(len(i)):
-            ll.val = i[j]
-            if j != len(i) - 1:
-                ll.next = ListNode()
-                ll = ll.next
-        nl = b(fl)
-        while not nl is None:
-            dl.append(nl.val)
-            nl = nl.next
+    fl = ListNode() if i else None
+    ll = fl
+    for j in range(len(i)):
+        ll.val = i[j]
+        if j != len(i) - 1:
+            ll.next = ListNode()
+            ll = ll.next
+    nl = b(fl)
+    while not nl is None:
+        dl.append(nl.val)
+        nl = nl.next
     print(dl)
