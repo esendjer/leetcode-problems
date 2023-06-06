@@ -7,6 +7,16 @@ class ListNode:
         self.next = next
 
 class Solution:
+    def reverseListS(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        ch = head
+        resNodes = None
+        while ch is not None:
+            tmp_ch = ch.next
+            ch.next = resNodes
+            resNodes = ch
+            ch = tmp_ch
+        return resNodes
+    
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         ch = head
         resNodes = None

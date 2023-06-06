@@ -15,7 +15,7 @@ go-fmt:
 
 go-test: go-fmt
 	@cd go &&\
-		go test &&\
+		go test -v -timeout 30s ${PACKAGE} &&\
 		cd ..
 
 all: py-test pkgname go-test

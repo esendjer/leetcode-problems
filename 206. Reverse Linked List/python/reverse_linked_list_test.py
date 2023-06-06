@@ -21,7 +21,9 @@ class TestSolution(unittest.TestCase):
     def runTest(self):
         a = Solution()
         b = a.reverseList
+        d = a.reverseListS
         for i, v in enumerate(CASES):
+            bl = []
             dl = []
             fl = ListNode() if v else None
             ll = fl
@@ -30,8 +32,13 @@ class TestSolution(unittest.TestCase):
                 if j != len(v) - 1:
                     ll.next = ListNode()
                     ll = ll.next
-            nl = b(fl)
-            while not nl is None:
-                dl.append(nl.val)
-                nl = nl.next
+            nb = b(fl)
+            nd = d(fl)
+            while not nb is None:
+                bl.append(nb.val)
+                nb = nb.next
+            while not nd is None:
+                dl.append(nd.val)
+                nd = nd.next
+            self.assertEqual(bl, RESULTS[i])
             self.assertEqual(dl, RESULTS[i])
