@@ -1,3 +1,4 @@
+CMAINFILE   = reverse-linked-list.c
 PACKAGE		?= $(shell cd ./go && go list)
 
 default: all
@@ -18,4 +19,18 @@ go-test: go-fmt
 		go test -v -timeout 30s ${PACKAGE} &&\
 		cd ..
 
-all: py-test pkgname go-test
+c-build:
+	@cd c &&\
+		gcc ./$(CMAINFILE) && \
+		chmod +x a.out && \
+		./a.out && \
+		cd ..
+
+c-clean:
+	@cd c &&\
+		$(RM) -f a.out && \
+		cd ..
+
+c-test: c-build c-clean
+
+all: py-test pkgname go-test c-test
