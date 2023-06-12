@@ -1,7 +1,17 @@
 from typing import List
-
+import heapq
 
 class Solution:
+    def containsDuplicateH(self, nums: List[int]) -> bool:
+        heapq.heapify(nums)
+        p = heapq.heappop(nums)
+        while nums:
+            c = heapq.heappop(nums)
+            if c == p:
+                return True
+            p = c
+        return False
+
     def containsDuplicateS(self, nums: List[int]) -> bool:
         return not len(set(nums)) == len(nums)
 
