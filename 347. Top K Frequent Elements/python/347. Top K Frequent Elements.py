@@ -1,6 +1,14 @@
 from heapq import nlargest
 from collections import Counter
+from typing import List
+
 class Solution:
+    def topKFrequentD(self, nums: List[int], k: int) -> List[int]:
+        d = {}
+        for i in nums:
+            d[i] = d.get(i, 0) + 1
+        return [i for i in sorted(d, key=d.get, reverse=True)[0:k]]
+    
     def topKFrequent(self, nums, k):
         return sorted(set(nums), key=lambda x: nums.count(x), reverse=True)[0:k]
 
