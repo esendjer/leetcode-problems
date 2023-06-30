@@ -1,5 +1,20 @@
 class Solution:
-    def intToRoman(self, num: int) -> str:
+    def intToRomanD(self, num: int) -> str:
+        res = ""
+        d = {
+            1000: "M", 900: "CM", 500: "D", 400: "CD",
+            100: "C", 90: "XC", 50: "L", 40: "XL",
+            10: "X", 9: "IX", 5:"V", 4: "IV", 1:"I"
+        }
+        for i in d:
+            if num < i:
+                continue
+            c = num // i
+            num = num % i
+            res = res + d[i] * c
+        return res
+    
+    def intToRomanW(self, num: int) -> str:
         res = ""
         while num:
             if num >= 1000:
@@ -67,3 +82,23 @@ class Solution:
                 num = num % 1
                 res = res + "I"*c
         return res
+
+cases = (
+    3,
+    58,
+    1994,
+    1985,
+)
+
+results = (
+    "III",
+    "LVIII",
+    "MCMXCIV",
+    "MCMLXXXV",
+)
+
+a = Solution()
+b = a.intToRomanD
+
+for i,v in enumerate(cases):
+    print(f"result: {b(v)}, expected: {results[i]}")

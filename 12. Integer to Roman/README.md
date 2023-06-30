@@ -2,6 +2,8 @@
 
 [12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/description/)
 
-Not enough perfect yet, but works well and hits at hight Beats
+~~Not enough perfect yet, but works well and hits at hight Beats~~
 
-Anyway, this needs to be rethought
+~~Anyway, this needs to be rethought~~
+
+UPD: The `intToRomanD` is a rethought solution
