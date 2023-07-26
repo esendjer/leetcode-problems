@@ -8,6 +8,31 @@ class ListNode:
         self.next = next
 
 class Solution:
+    def addTwoNumbersT(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        ch1 = l1
+        ch2 = l2
+        rem = 0
+        ans = ListNode()
+        pans = ans
+        while ch1 or ch2 or rem > 0:
+            f = 0
+            s = 0
+            if ch1:
+                f = ch1.val
+                ch1 = ch1.next
+            if ch2:
+                s = ch2.val
+                ch2 = ch2.next
+            r = f + s + rem
+            rem = r // 10
+            r = r % 10
+            p = ListNode(
+                val=r
+            )
+            pans.next = p
+            pans = p
+        return ans.next
+    
     def addTwoNumbersS(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         ts = 0
         ch2 = l2
